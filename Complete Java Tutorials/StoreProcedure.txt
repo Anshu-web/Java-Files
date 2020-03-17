@@ -1,0 +1,55 @@
+The best way to call a stored procedure with JPA and Hibernate
+Last modified: Feb 14, 2019
+ Follow @vlad_mihalcea  
+Imagine having a tool that can automatically detect if you are using JPA and Hibernate properly. Hypersistence Optimizer is that tool!
+Introduction
+In this article, you are going to learn the best way to call a stored procedure when using JPA and Hibernate so that the underlying JDBC resources are released as soon as possible.
+
+I decided to write this article since the way Hibernate handles stored procedures can lead to ORA-01000: maximum open cursors exceeded issues on Oracle as explained in this Hibernate forum thread or StackOverflow question.
+
+
+How does a stored procedure call work with JPA and Hibernate
+To call a stored procedure or a database function with JPA, you can use the StoredProcedureQuery as illustrated by the following example:
+
+
+StoredProcedureQuery query = entityManager
+.createStoredProcedureQuery("count_comments")
+.registerStoredProcedureParameter(
+    "postId",
+    Long.class,
+    ParameterMode.IN
+)
+.registerStoredProcedureParameter(
+    "commentCount",
+    Long.class,
+    ParameterMode.OUT
+)
+.setParameter("postId", 1L);
+ 
+query.execute();
+Long commentCount = (Long) query
+.getOutputParameterValue("commentCount");
+Behind the scenes, the StoredProcedureQuery interface is extended by the Hibernate-specific ProcedureCall interface,
+ so we can rewrite the previous example like this:
+
+
+
+ProcedureCall query = session
+.createStoredProcedureCall("count_comments");
+ 
+query.registerParameter(
+    "postId",
+    Long.class,
+    ParameterMode.IN
+)
+.bindValue(1L);
+ 
+query.registerParameter(
+    "commentCount",
+    Long.class,
+    ParameterMode.OUT
+);
+ 
+Long commentCount = (Long) call
+.getOutputs()
+.getOutputParameterValue("commentCount");

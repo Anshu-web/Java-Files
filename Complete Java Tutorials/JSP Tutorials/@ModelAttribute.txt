@@ -1,0 +1,59 @@
+
+	//Step 1--
+		
+	// Below method will take the parameter from the client using @RequestParam one by one
+	// 
+		
+	
+	  @RequestMapping("/commentSubmission") public ModelAndView
+	 display(@RequestParam("name") String name,@RequestParam("comment")String comment ) {
+	  
+	  ModelAndView mv = new ModelAndView("commentform");
+	  
+	  mv.addObject("msg","Form is Submitted by "+name+" and the comment is "+comment);
+	  
+	  return mv;
+	 
+	  }
+	 /
+	// Step 2--
+		
+	// Below method will take the parameter from the client using @ModelAttribute 
+	// And Comment class object	
+	//@ModelAttribute as a method parameter.
+//This binds the data name provided by the HTML form feild and the same attributes present in Comment class.
+// The attributes present on both the sides should same.
+		
+		@RequestMapping("/commentSubmission")
+		public ModelAndView display(@ModelAttribute("msg") Comment comment) {
+			
+			  ModelAndView mv = new ModelAndView("commentform");
+			  
+			return mv;
+	}
+
+// Use of BindingResult--In case if the type is mismatched then it does not let you to redirect to another page
+// User/Client remains on the same page.
+
+ @RequestMapping("/commentSubmission") public ModelAndView
+	  display(@ModelAttribute("msg") Comment comment, BindingResult bindingResult ) {
+	  
+		  if(bindingResult.hasErrors())
+		  {
+			  ModelAndView mv = new ModelAndView("index");
+			  
+			  return mv; 
+			  
+		  }
+	  ModelAndView mv = new ModelAndView("commentform");
+	  
+	  return mv; }
+
+     //  @ModelAttribute as a method level as a annotation
+        
+         @ModelAttribute
+       @RequestMapping("/commentSubmission")
+		public void display(Model model) {
+			
+	 model .addAttribute("headerinfo","Interview");
+			  }

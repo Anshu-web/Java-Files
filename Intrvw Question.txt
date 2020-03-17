@@ -1,0 +1,76 @@
+1.Stateless and Stateful protocol
+2.Load Balancing
+3.Scalability(Horizontallyand Vertically)
+4.Consistent Hashing
+
+===============================================
+
+Diff b/w Spring transaction and Hibernate transaction???
+
+Can we assign multiple transaction to a single thread??
+
+If we have one metadata then what should we do to avail that in all the methods that we have.....
+
+Thread Local and how does it work?????
+
+Default value of primitive boolean....
+
+In a Hashmap<AcNo.,Balance> , if we have an api that exposes this hashmap  now to add and deduct we have two  methods,
+ and service is written in such a way that both can be done simultaneously like add by paytm, add by cc etc.
+Will there be any  concurrency issue if yes then how to sole.
+
+How to write customized checked exception?????
+
+What all the parts of one stack record or related to methods.
+
+Diff b/w heap and stack
+
+Find the max element in stack(Deep Dive Required)
+
+How to write a stackover flow programe....
+
+Upcasting(Widening) and Downcasting(Narrowing)
+
+====================================================================================
+
+What is Mocking.
+
+Sonar Code Recovery...
+
+Use of serialVersion ID;
+
+To find duplicates vales in list and comparision within the list on firstname and lastname.
+
+What changes would be required if we migrate from hibernate to JPA
+=====================================================================================================
+
+1 Java Program to test if given number is Armstrong or not
+2 Java Program to test if a given number is Fibonacci or not
+3 java program to find distinct word list from a file
+4 Java program to find duplicate character from a string
+5 Java Program to find middle index of array where both ends sum is equal
+6 Java Program to find line with max character length in descending order in Java
+7 Java Program to find max two numbers in an array
+8 Java program to find max repeated words from a file
+9 Java program to find sum of prime numbers
+10 Java program to reverse a given number
+11 Java program to find permutations of a given number
+12 Java program to reverse a given string
+13 Java program to find factorial of a given number
+14 Java Program for Binary Search
+15 Java Program to Add Two 2D Matrix
+16 Java Program to test given words are anagram or not
+17 Java Program to Find LCM of a Two Given Number
+18 Check Given String is Rotation of Another String
+19 Java Program To Check If A Given Number is A Perfect Number
+20 Remove Common Characters From Given Strings
+21 Find Second Largest Number in Array
+22 Java Program to Reverse an Array in Place Without Using Any Second Array
+23 Java Program to Print 1 To 10 Without Using Loop
+24 Write a Java Program to Compare Files in Java
+
+
+
+
+
+

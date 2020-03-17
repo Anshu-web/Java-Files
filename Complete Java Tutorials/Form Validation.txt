@@ -1,0 +1,8 @@
+ 
+In JSP, the form validation is done through @valid annotation wherein we can use below annotation---
+
+@size
+@not null
+@future
+@present
+@email

@@ -1,0 +1,41 @@
+   
+   ==  Serialization means converting the object state into persistent state(binary format).
+   ===Saving he state of an object.
+== use of objectoutputstream. writeobject() method is used.
+
+==class should implement Serializable interface
+==By default primitive data types and String implement Serializable interface
+==Every member in any class should implement Serializable interface if not then shuld be taken care of manually.
+
+===================================================De-Serialization ===
+
+ De-Serialization means converting the persistent state into object state.
+=== ObjectInpuStream
+=== readobject()
+== While De-Serialization constructor does not gets called.
+
+=======================================================Version ID=================
+
+==In case if the serial version id is not included then by default VersionId is included at run time.
+But this fails for any changes in the class.
+
+==Version ID at the time of serialization is matched with Version ID at the time of De-serilization.
+
+==If it does not match then exception is araised that is incompatible class.
+
+==Version ID is 64-bit hash of class name, Interface, methods and member variable.
+
+========================================Serialization in inheritance========================
+
+In case if sub-class implements serializable but super class does not then member variable of super class does not involve in 
+serialization and de-serialization.
+==But in this case, defaultwriteObject() and defaultReadObject() need to be included in sub-class.
+
+-===============================================Externalization================
+
+==This is one of the ways to do the serialization.
+==No arg constructor is mandatory.
+==Version ID may or may not be there.
+==ReadExternal and WriteExternal method is included in class.
+==If in case super class does not implement the serilizable interface
+

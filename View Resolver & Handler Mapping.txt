@@ -1,0 +1,26 @@
+					View Resolver Classes
+
+There are many view resolver classes.
+
+Spring provides view resolvers, which enable you to render models in a browser without tying you to a specific view
+ technology. ... The two interfaces which are important to the way Spring handles views are ViewResolver and View . 
+The ViewResolver provides a mapping between view names and actual views.
+
+
+=======================================
+
+HandlerMapping is an interface that defines a mapping between requests and handler objects. While Spring MVC 
+framework provides some ready-made implementations, the interface can be implemented by developers to provide 
+customized mapping strategy
+
+===================================================Hand over activites
+
+1. need to contact Andy 
+2.Need few users name to get aaded
+3.need to proviswdethe group name to andy
+
+===============================
+
+
+
+

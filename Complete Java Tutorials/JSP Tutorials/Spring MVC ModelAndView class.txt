@@ -1,0 +1,20 @@
+The final interface to pass values to a view is the ModelAndView.
+
+This interface allows us to pass all the information required by Spring MVC in one return:
+
+
+@GetMapping("/goToViewPage")
+public ModelAndView passParametersWithModelAndView() {
+    ModelAndView modelAndView = new ModelAndView("viewPage"); viewPage is a jsp file and has been set as View.
+    modelAndView.addObject("message", "Baeldung");
+    return modelAndView;
+}
+
+
+@GetMapping("/goToViewPage")    // So, ModelAndView returns two things model(data) and view.
+public ModelAndView home() {
+    ModelAndView mv= new ModelAndView();
+   mv.addObject("name", myName);
+   mv.setViewName("home");     //home is a jsp file and has been set as View.
+    return modelAndView;
+}

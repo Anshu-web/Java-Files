@@ -1,0 +1,16 @@
+The advantage of ModelMap is it gives us the ability to pass a collection of values and treat these values
+ as if they were within a Map:
+
+
+@GetMapping("/printViewPage")
+public String passParametersWithModelMap(ModelMap map) {
+    map.addAttribute("welcomeMessage", "welcome");
+    map.addAttribute("message", "Baeldung");
+
+   map.put();//This is also one of the methods present in modelmap to add the data.
+
+    return "viewPage";
+
+
+
+}

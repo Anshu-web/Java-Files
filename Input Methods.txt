@@ -1,0 +1,102 @@
+  In Java, there are three different ways for reading input from the user in the command line environment(console).
+
+			1. Using Buffered Reader Class
+			2. Using Scanner Class
+			3. Using Console Class
+
+
+This is the Java classical method to take input, Introduced in JDK1.0. This method is used by wrapping 
+the System.in (standard input stream) in an InputStreamReader which is wrapped in a BufferedReader, we can read 
+input from the user in the command line.
+
+Advantages
+The input is buffered for efficient reading.
+Drawback:
+The wrapping code is hard to remember.
+Program:
+
+public class Test  
+{ 
+    public static void main(String[] args) throws IOException  
+    { 
+        //Enter data using BufferReader 
+        BufferedReader reader =  
+                   new BufferedReader(new InputStreamReader(System.in)); 
+         
+        // Reading data using readLine 
+        String name = reader.readLine(); 
+  
+        // Printing the read line 
+        System.out.println(name);         
+    } 
+} 
+
+Note==Note: To read other types, we use functions like Integer.parseInt(), Double.parseDouble().
+To read multiple values, we use split().
+======================================================================
+					2. Using Scanner Class
+
+This is probably the most preferred method to take input. The main purpose of the Scanner class is to
+ parse primitive types and strings using regular expressions, however it is also can be used to read input
+ from the user in the command line.
+
+Advantages:
+Convenient methods for parsing primitives (nextInt(), nextFloat(), …) from the tokenized input.
+Regular expressions can be used to find tokens.
+
+Drawback:
+The reading methods are not synchronized
+
+class GetInputFromUser 
+{ 
+    public static void main(String args[]) 
+    { 
+        // Using Scanner for Getting Input from User 
+        Scanner in = new Scanner(System.in); 
+  
+        String s = in.nextLine(); 
+        System.out.println("You entered string "+s); 
+  
+        int a = in.nextInt(); 
+        System.out.println("You entered integer "+a); 
+  
+        float b = in.nextFloat(); 
+        System.out.println("You entered float "+b); 
+    } 
+} 
+============================================================================
+				3. Using Console Class
+
+It has been becoming a preferred way for reading user’s input from the command line.
+ In addition, it can be used for reading password-like input without echoing the characters entered by the user;
+ the format string syntax can also be used (like System.out.printf()).
+
+Advantages:
+
+Reading password without echoing the entered characters.
+Reading methods are synchronized.
+Format string syntax can be used.
+
+Drawback:
+Does not work in non-interactive environment (such as in an IDE).
+
+public class Sample  
+{ 
+    public static void main(String[] args)  
+    {         
+        // Using Console to input data from user 
+        String name = System.console().readLine(); 
+          
+        System.out.println(name); 
+    } 
+}
+=======================================================================================
+
+In Scanner class if we call nextLine() method after any one of the seven nextXXX() method then the nextLine() doesn’t not
+read values from console and cursor will not come into console it will skip that step. 
+The nextXXX() methods are nextInt(), nextFloat(), nextByte(), nextShort(), nextDouble(), nextLong(), next().
+
+In BufferReader class there is no such type of problem. This problem occurs only for Scanner class, due to nextXXX()
+ methods ignore newline character and nextLine() only reads till first newline character. If we use one more call of
+ nextLine() method between nextXXX() and nextLine(), then this problem will not occur because nextLine() will consume
+ the newline character.

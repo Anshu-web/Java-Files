@@ -1,0 +1,602 @@
+
+
+===================================================================================Conclusion============================================
+
+So here we see that if both the objects S1 and S2 have different content,
+ then we are pretty sure that our overridden Hashcode method will generate
+different Hashcode(116232,11601) for both objects.
+ NOW since there are different hash codes, so it won't even bother to call EQUALS method.
+ Because a different Hashcode GUARANTEES DIFFERENT content in an object.
+
+====================================================
+
+a bitwise copy is a copy of a block of memory(Shalow Copy)
+
+a memberwise copy is a copy that requires intimate knowledge of the structure of data that's being copied(Deep Copy)
+
+A mutable object is simply an object which can change its state after construction. 
+For example, StringBuilder and Date are mutable objects, while String and Integer are immutable objects.
+
+======================================
+
+1.Multiple Dtasource in SpringBoot
+2.Consuming Rest Services
+3.Spring Boot Testing | Writing JUnit Tests using JUnit and Mockito | Java Techie
+
+//https://www.youtube.com/watch?v=d2KwvXQgQx4===Mockito Tutorial - Mocking With Junit and Maven
+
+4.Java Spring | Spring Framework | Spring AOP Part - 2 by Naveen
+5.Spring Bean Scopes///https://www.youtube.com/watch?v=pWmMVhg440k
+6.Lec-66: Why Indexing is used | Indexing Beginning | DBMS
+
+7. Java Array Programes///https://www.youtube.com/watch?v=xJ6SqygNjl0&list=PLF9tovyahfL020hGgLIsRMZY4bfSLCFUa
+
+=====================================================
+
+For A Leading and reputed Singapore based Mnc, We are looking Java Engineer for Noida Sector 63 Location.
+
+
+Job Title   : Software Engineer
+Salary : upto 12 LPA
+Location :sector 63 Noida
+Experience : 2 yrs+
+
+Job Responsibility
+Eligibility
+Experience and Qualification
+• 2-7 Years of experience with Java,Spring,Hibernate.
+• Java Microservices: 2-3 years Spring Boot, Spring Integration or Batch.
+• Working knowledge of Databases
+• Design and develop high-volume, low-latency applications for critical systems, delivering high-availability and performance.
+• Write well designed testable, efficient code, and ensure that the designs comply with specifications.
+• Bachelor's Degree in Computer Science or equivalent
+ Must-Have Skills
+• Java
+• Any Relational Database
+• GIT
+ 
+
+Interested Candidate may apply for the Job.
+
+Warm Regards
+Gaurav Gupta
+7042558704
+Sr. Recruitment Executive
+faridabad@thehrbeans.com
+
+==============================================================
+	
+Adeptia India Pvt Ltd,
+
+D -74, Sector 63,
+
+Noida -201301.
+
+Round 1 (written test)
+
+1. 25 multiple choice questions (core java, collections, multithreading, oops, operators, logical & output based questions)
+
+2. 2 Programs being asked
+
+ 
+
+Round 2 (Technical Round)
+
+1. Core Java (collection, exception handling, concurrent hashmap, consumer problem, string)
+
+ and Advance java questions 
+
+2. Wep Api (Restful api)
+
+3. Collections & Multithreading
+
+4. Hibernate and Spring MVC basic.
+
+5. Project questions
+
+5. Problem solving based on java programs (complexity, logic, how to use logic)
+
+6. Scenario based question based on java programs
+
+- blocking queue related questions, how to implement block queue
+
+- production consumer problem statement.
+=================================================================
+
+You have a Java web server in production that got stuck: stopped writing logs and doesn’t answer to http requests.
+ How would you investigate?
+Logs say OutOfMemoryError - how would you investigate?
+Customer clicks on a button and gets NullPointerException, but same case works correctly in development environment.
+ There are no log statements in code that help analyse the problem.
+ How would you investigate and what step would you take to ease debugging such problems in future?
+
+You are investigating an issue and written a JUnit test - it fails as expected.
+ So you start debugger and step over several times, but the issue is not reproduced. Why can this happen?
+Your production Java web server typically handles http request in <50ms, but now you see times raised to about 1 second.
+ How would you investigate?
+You have multithreaded app which looks properly synchronized, but sometimes it seems that when particular 
+field is read it returns old value. You suspect some synchronization issue, how would you investigate?
+
+==================================================
+
+1.Why we do override toString().
+
+2. What kind of option you should go with while attempting multithreading.
+
+3.Where is it possibly require to widen the scope of overridden methods.
+
+4.Where exactly we should use abstract class in building a real time applications.
+
+5. When this has to be decided that inner classes are required .
+
+6. Which collection we should prefer while sorting.
+
+7. What if we don't handle unchecked exceptions.
+
+9. Which pattern you should use to make your program less maintainable.
+
+10. Why Java doesn't explicitly support pointer .
+if he asks so that means he want to know whether you have idea about Java security package taking into consideration
+ that you are aware of pointers disadvantages.
+
+===================================================================
+
+Let’s discuss some core Java interview Questions:
+
+String Vs String Builder Vs String Buffer.
+Default and protected access specifiers.
+HashMap Vs HashTable.
+HashSet Vs TreeSet.
+What do you meant by ordered and sorted in collections?
+What are the different ways to handle exceptions?
+ArrayList Vs Vector
+equal() vs ==
+Will garbage collection guarantee that a program won’t run out of memory.
+Define aim of finalization?
+Will we tend to use the constructor, rather than init(), to initialize servlet.
+What is the require information to make a TCP socket?
+Define Stored Procedures and how it is useful?
+How do you implement a thread-safe JSP page?
+What is the difference between Encapsulation, inheritance, and polymorphism?
+Check your ability, by answering this questions.
+
+====================================================
+
+1. what is the use of private static.
+2. using static variable inside non static block
+3. will finally block executed if we give system.exit(0); in try block
+4. will finally block executed if the catch block executed
+5. is it possible to start a thread twice?
+6. Can we call the run() method instead of start()?
+7. Can we execute a program without main() method?
+8. can we override the main method?
+9. Can you make a constructor final?
+10.Can you use this() and super() both in a constructor?
+
+===============================================================
+
+Questions like
+
+1 Can we declare constructer as private ? if yes where you used it in your project ?
+
+2. Where do you use collections in your project.
+
+3.Write a java logic for in put rajani@gmail.com out put like this r****i@g***.com
+
+4. Access specifiers used in your project.
+
+5.Where to choose interface and where to use abstract class.
+
+6.How you can achieve loose coupling in your project.
+
+7.hashcode and equals method.
+
+8. Which cursor objects you used in your project for iteration.
+
+9.Exception handling questions with scenario, and most of the time the question summary is, 
+can child class exception catch the superclass exception.
+
+================================================================
+
+A few more for professional with more than 5+ yrs of experience would be:
+can you implement BST? How?
+What is LRU cache How will you implement it?
+How would you detect a deadlock in a multi-threaded system?
+How will you improve performance of an existing system? Can you do GC tuning?
+Any Producer-Consumer problem using multi-threaded environment.
+
+A few difficult ones at basic level (less than 5 yrs experience):
+Is java pass by value or pass by reference? Explain
+Concurrency package and NIO
+Red-Black tree
+Data structures and algorithm related questions e.g. How to find the shortest path between any 2 nodes of a graph.
+Pre-Order, Post-Order and In-Order traversal of tree, usage benefits and implementation.
+How will reverse a singly linked list?...In one traversal?
+How would you find a cycle in a linked list?
+
+=====================================================================
+
+1.How hashmap works?
+How HashMap works in Java ?
+Ans:- A HashMap in Java stores key-value pairs. 
+The HashMap requires a hash function and uses hashCode and equals methods, 
+in order to put and retrieve elements to and from the collection respectively. 
+When the put method is invoked, the HashMap calculates the hash value of the 
+key and stores the pair in the appropriate index inside the collection. 
+If the key exists, its value is updated with the new value. 
+Some important characteristics of a HashMap are its capacity, its load factor and the threshold resizing.
+
+2.How to create thread-safe singleton in Java using double checked locking?
+3.Write Java program to create deadlock in Java and fix it ?
+4.Why multiple inheritance is not supported in Java ?
+5.Why wait and notify  called from synchronized method in Java?
+6.Can you override static method in Java? if I create same method in subclass is it compile time error?
+7.Can you override static method in Java for complete answer of this tough Java interview quest
+8.Why Java does not support operator overloading ?
+9.Why String is immutable in Java?
+10.Why wait and notify is declared in Object class instead of Thread ?
+11.Why char array is preferred to store password than String in Java?
+12.What happens if your Serializable class contains a member which is not  serializable? How do you fix it?
+3.1k views · View Upvoters
+
+==================================================
+
+What is a  ConcurrentHashMap ?
+
+Write a program for Graph Traversal.
+
+Why Reflection shouldn't be used normally ?
+
+Write a program for Coin Changer application.
+
+Why Java doesn't allow overriding static methods ?
+
+Why Interfaces are only allowed to have static final variables ?
+
+==========================================================
+Recently I faced these java questions in my interview:
+1. Explain the concept of autoboxing?
+2. What is the difference between finalize() and dispose()?
+3. What are the different ways of taking input from user(this was very simple)?
+4. Hybrid inheritence implementation?
+5. Reflection API in java?
+
+====================================
+Here are some tough java interview questions,
+
+What are some of the tough Java questions you were asked in an interview?
+Does not overriding hashCode() method has any performance implication?
+Does all property of Immutable Object need to be final?
+How does substring () inside String works?
+Can you write a critical section code for the singleton?
+How do you handle error condition while writing a stored procedure or accessing stored procedure from java?
+What is difference between Executor.submit() and Executer.execute() method ?
+What is the difference between factory and abstract factory pattern?
+What is Singleton? is it better to make the whole method synchronized or only critical section synchronized?
+Can you write code for iterating over HashMap in Java 4 and Java 5?
+When do you override hashCode() and equals()?
+What will be the problem if you don't override hashCode() method?
+Is it better to synchronize critical section of getInstance() method or whole getInstance() method?
+Where does equals() and hashCode() method comes in the picture during the get() operation?
+How do you avoid deadlock in Java?
+What is the difference between creating String as new() and literal?
+What is Immutable Object? Can you write Immutable Class?
+Give the simplest way to find out the time a method takes for execution without using any profiling tool?
+Which two methods you need to implement to use an Object as key in HashMap?
+
+==================================================================================
+38)What is server let chaining?
+
+39) Difference between Public, Private, Default and Protected ?
+
+Ans. Private - Not accessible outside object scope.
+ Public - Accessible from anywhere.
+ Default - Accessible from anywhere within same package.
+ Protected - Accessible from object and the sub class objects.
+ 40) What are concepts introduced with Java 5 ?
+
+Ans. Generics , Enums , Autoboxing , Annotations and Static Import.
+
+43) How to open notepad in java?
+
+44)What is this keyword in java?
+
+45)Is pointer is in java?
+
+46)How to get address of a variable in java?
+
+47) Does Constructor return any value in java?
+
+48)Why Main method be static?
+
+49)can you create a new object without using new keyword in java
+
+50)What is the difference between an Inner Class and a Sub-Class?
+
+51)What is TypeConversion?
+
+52)Can overloaded methods be override too?
+53)Is it possible to override the main method?
+54) How to invoke a superclass version of an Overridden method?
+55)What is super?
+56) How do you prevent a method from being overridden?
+57) What is an Interface?
+58) Can we instantiate an interface?
+59) Can we create an object for an interface?
+
+60)What is JIT comiler
+
+61)Explain try and catch keywords in java?
+62) Can we have try block without catch block?
+63) Can we have multiple catch block for a try block?
+64) Explain importance of finally block in java?
+65) What is bytecode in java
+
+66)What are constant in java?
+
+67)Define do while ,while loop in java?
+
+68)Define Switch Case in java?
+
+69)How Does Java Implement Polymorphism?
+
+70)Why java is not 100% Object-oriented?
+
+71)What are wrapper classes?
+
+72)What is singleton class and how can we make a class singleton?
+
+73)What are the differences between Heap and Stack Memory?
+
+75) What is BootStrap class loader and how does it works?
+76) What is Extensions class loader and how does it works?
+77) What is application class loader and how does it works?
+78) When an object becomes eligible for garbage collection?
+79) Who performs garbage collection?
+80) When does garbage collector run?
+
+81)What is runtime polymorphism or dynamic method dispatch?
+
+82)Can you override a private or static method in Java?
+
+83)What is association?
+
+84)What do you mean by aggregation?
+
+85)What is composition in Java?
+
+86)What is garbage collector in java?
+
+87)How would you implement a garbage collector in java?
+
+88)What is use of garbage collector?
+
+89)Why Char array is preferred over String for storing password?
+
+90)How does volatile affect code optimization by compiler?
+
+=========================================================================
+
+What about Maps? Are they also part of collection framework?
+How would you add elements in java HashMap? Can you write a piece of code to retrieve the
+elements in HashMap?
+Can I enter a Null value in a HashMap ?
+Can I enter a Null key in a HashMap ?
+What if I try to enter a Null key twice or any other key twice?Can there be duplicate keys?
+When I iterate a HashMap in what order would I get the elements?
+Consider I have a HashMap which uses a Employee class (User defined) as key and Integer class as value .
+what would you need to take care off, so that I can use the Employee class efficiently as the key in my java
+HashMap?
+What would happen if I don’t override thee two methods?
+Why wouldn’t I be able to do retrieve it ? I am able to retrieve the value if I use String class as key, what’s
+the problem with using the Employee class.?
+Why is Java again Hashing the value ? we have already implemented the hashCode() method ,
+why does a need arise to do it again ?
+
+===================================================
+1. What New Features Were Added in Java 8?
+
+2. How Streams differ from collections?
+
+3. What is the use of Functional Interface in Java 8? When to use Functional Interface in Java 8?
+
+4. What is the need of static method in Interface ?
+
+5. What is the need of having a default method in an interface ?
+
+6. What is Lambda Expression in Java 8?
+
+7. What is Method Reference in Java 8?
+
+8. What are different types of Method References in Java 8?
+
+9. Why to use Optional in Java 8?
+
+10. What is Optional in Java 8?
+
+and may more questions ........11 ...1
+========================================================
+
+How JVM works ?
+What makes String immutable?
+In what cases,Finally block does not execute?
+Implementation of hash code method?
+Why 31 as a prime number is used in hash code implementation?
+Can i pass user defiled object in in try catch block?
+Implementation of Arraylist?
+What happens if hashcode generated of two object is same?
+Generics question.
+Sorting and Searching algorithm  and their implementation?
+What is intern method?
+
+=====================================================
+
+For junior engineers, "How would you use Java interfaces?" ,
+ "What is the difference between & and &&?" or "How do you serialize a Java object?"
+
+For mid-level engineers, "how can you make one thread wait on another thread?",
+ "How do you create a singleton and why?", "How do you implement a RESTful service?"
+
+============================================================
+
+Why doesn’t importing static final from other class , doesn’t actually make a reference call to class holding static final ?
+
+Why Char array is preferred over String for storing password?
+
+How does volatile affect code optimization by compiler?
+
+Why HashTable has been deprecated ?
+
+============================================
+Most often questions asked in Java interviews are based on these concepts(in the approximately increasing order of difficulty):
+
+Polymorphism
+Dynamic Binding
+Abstraction
+Data hiding
+Inheritance
+Method overriding
+Exception Handling
+Database connection setup(JDBC/ODBC)
+Access modifiers
+Exception cascading
+Immutability
+Unit testing and integration testing
+Wrapper classes
+Object class
+Java libraries and packages
+Java util class
+Java collections
+Java generics
+Microservices
+Object Oriented Design
+Design Patterns(Singleton, Factory etc)
+Frameworks(Play framework, Spring boot, Apache Tomcat, Hibernate)
+Java Reflection
+
+======================================================================
+
+What's the meaning of System.out.println in Java?
+System.out.println is a Java statement that prints the argument passed, into the System.out which is generally stdout.
+
+System is a Class
+out is a Variable
+println() is a method
+System is a class in the java.lang package . The out is a static member of the System class, and is an instance of java.io.PrintStream . The println is a method of java.io.PrintStream. This method is overloaded to print message to output destination, which is typically a console or file.
+
+the System class belongs to java.lang package
+
+ 
+class System {
+  public static final PrintStream out;
+  //...
+}
+
+the Prinstream class belongs to java.io package
+
+ 
+class PrintStream{
+  public void println();
+  //...
+}
+
+
+Next :  What is the purpose of Runtime and System class?
+
+
+
+
+Java Interview Questions-Core Faq - 1
+Java Interview Questions-Core Faq - 2
+Java Interview Questions-Core Faq - 3
+Important features of Java
+Difference between Java and JavaScript?
+What is the difference between JDK and JRE?
+What gives Java its 'write once and run anywhere' nature?
+What is JVM and is it platform independent?
+What is Just-In-Time (JIT) compiler?
+What is the garbage collector in Java?
+What is NullPointerException in Java
+Difference between Stack and Heap memory in Java
+How to set the maximum memory usage for JVM?
+What is numeric promotion?
+Why do we need Generic Types in Java?
+What does it mean to be static in Java?
+What are final variables in Java?
+How Do Annotations Work in Java?
+How do I use the ternary operator in Java?
+What is instanceof keyword in Java?
+How ClassLoader Works in Java?
+What are fail-safe and fail-fast Iterators in Java
+What are method references?
+"Cannot Find Symbol" compile error
+Difference between system.gc() and runtime.gc()
+How to convert TimeStamp to Date in Java?
+Does garbage collection guarantee that a program will not run out of memory?
+How setting an Object to null help Garbage Collection?
+How do objects become eligible for garbage collection?
+How to calculate date difference in Java
+Difference between Path and Classpath
+Is Java "pass-by-reference" or "pass-by-value"?
+Difference between static and nonstatic methods java
+Why Java does not support pointers?
+What is package in Java?
+What are wrapper classes?
+What is singleton class in Java?
+Difference between Java Local Variable, Instance Variable and a Class Variable?
+Can a top level class be private or protected in java
+Are Polymorphism , Overloading and Overriding similar concepts?
+How to Use Locks in Java
+Why Multiple Inheritance is Not Supported in Java
+Why Java is not a pure Object Oriented language?
+Why can't a Java class be declared as static?
+Difference between Abstract class and Interface in Java
+Why do I need to override the equals and hashCode methods in Java?
+Why does Java not support operator overloading?
+What’s meant by anonymous class in Java?
+Static Vs Dynamic class loading in Java
+Why am I getting a NoClassDefFoundError in Java?
+How to generate random integers within a specific range in Java
+What is the purpose of Runtime and System class?
+What is finally block in Java?
+What is difference between final, finally and finalize?
+What is try-with-resources in java?
+What is a stacktrace?
+What is the meaning of immutable in terms of String?
+What are different ways to create a string object in Java?
+Difference between String and StringBuffer/StringBuilder in Java
+What is the difference between creating String as new() and literal?
+How do I convert String to Date object in Java?
+How do I create a Java string from the contents of a file?
+What actually causes a StackOverflow error in Java?
+Why is char[] preferred over String for storage of password in Java
+What is I/O Filter and how do I use it in Java?
+Serialization and Deserialization in Java
+Understanding transient variables in Java
+What is Externalizable in Java?
+What is the purpose of serialization/deserialization in Java?
+What is the Difference between byte stream and Character streams
+How to append text to an existing file in Java
+Read/convert an InputStream to a String in Java
+What is the difference between Reader and InputStream in Java
+Introduction to Java threads
+What is synchronization Java?
+Static synchronization Vs non static synchronization in Java
+Java Thread Deadlock Tutorial
+What is Daemon thread in Java
+Difference between implements Runnable and extends Thread in Java
+What is the volatile keyword in Java
+What are the basic interfaces of Java Collections Framework
+What are the differences between ArrayList and Vector in Java
+What is the difference between ArrayList and LinkedList?
+What is the difference between List and Set in Java
+Difference between HashSet and HashMap in Java
+Difference between HashMap and Hashtable in Java?
+How does the hashCode() method of java works?
+Difference between capacity() and size() of Vector in Java
+What is a Java ClassNotFoundException?
+How to fix java.lang.UnsupportedClassVersionError
+
+
+
+

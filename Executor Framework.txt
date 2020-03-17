@@ -1,0 +1,47 @@
+
+Thread pool is a pool of already created worker thread ready to do the job. 
+It creates Thread and manage them. 
+Instead of creating Thread and discarding them once task is done, thread-pool reuses threads in form of worker thread.
+
+public class ThreadPoolExample {
+    public static void main(String args[]) {
+       ExecutorService service = Executors.newFixedThreadPool(10); //create 10 worker threads in Thread Pool
+       for (int i =0; i<100; i++){
+           service.submit(new Task(i)); //submit that to be done 
+       }
+    }  
+}
+
+final class Task implements Runnable {
+    private int taskId;  
+    public Task(int id){
+        this.taskId = id;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Task ID : " + this.taskId +" performed by " 
+                           + Thread.currentThread().getName());
+    }  
+}
+
+======================================================================================
+
+			There are various thread pools in java:
+
+Single Thread Executor : A thread pool with only one thread. So all the submitted tasks will be executed sequentially.
+ Method : Executors.newSingleThreadExecutor()
+
+Cached Thread Pool : A thread pool that creates as many threads it needs to execute the task in parrallel.
+ The old available threads will be reused for the new tasks. If a thread is not used during 60 seconds,
+ it will be terminated and removed from the pool.
+ Method : Executors.newCachedThreadPool()
+
+Fixed Thread Pool : A thread pool with a fixed number of threads.
+ If a thread is not available for the task, the task is put in queue waiting for an other task to ends.
+ Method : Executors.newFixedThreadPool()
+
+Scheduled Thread Pool : A thread pool made to schedule future task. Method : Executors.newScheduledThreadPool()
+
+Single Thread Scheduled Pool : A thread pool with only one thread to schedule future task.
+ Method : Executors.newSingleThreadScheduledExecutor()

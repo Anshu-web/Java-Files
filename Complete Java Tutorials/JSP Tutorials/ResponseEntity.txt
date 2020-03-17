@@ -1,0 +1,37 @@
+
+*****************ResponseEntity**********************************
+
+ResponseEntity represents the whole HTTP response: status code, headers, and body.
+Because of it, we can use it to fully configure the HTTP response.
+
+@GetMapping("/hello")
+ResponseEntity<String> hello() {
+    return new ResponseEntity<>("Hello World!", HttpStatus.OK);
+}
+
+
+return new ResponseEntity<>(HttpStatus.OK);
+
+//When you pass only one argument to the ResponseEntity constructor it considers that as status 
+to be sent to the client in the response.
+
+******************************************************************************
+
+return new ResponseEntity<>(true,HttpStatus.OK);
+
+//When you pass two arguments to the ResponseEntity constructor it considers the first argument as response body
+and the second argument as the status to be sent to the client in the response.
+
+Httpheaders httpheaders=new Httpheaders();
+httpheaders.add("key1","value1");
+httpheaders.add("key1","value1");
+
+******************************************************************************
+return new ResponseEntity<>(true,httpheaders,HttpStatus.OK);
+
+//When you pass three arguments to the ResponseEntity constructor it considers the first argument as response body
+and the second argument as the http headers and the third argument as status to be sent to the client in the response.
+
+
+
+

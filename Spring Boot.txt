@@ -1,0 +1,21 @@
+
+Mucus-which is there inside your nose and wjen id cones out of your nose is called Nasal Discharge.
+Runny nose (Medical Term--Rhinorrhea)
+
+It provides stability,flexibility,open Source,based on JVM,good connectivity and cloud-native.
+
+1.Diff b/w Spring and Spring Boot.
+2.Spring Boot comes with
+			-Autoconfiguaration
+			-Auto-dependency resolution
+			-Embedded Tomcat servers
+			-Spring boot CLI
+			
+3. Features of Spring Boot.
+   	 Spring CLI
+	Starter Dependency
+	Spring Initilizer
+	Auto-configuration
+	Spring Actuator(Helps to see what exactly happening inside a running application.)
+	Logging and security.
+	

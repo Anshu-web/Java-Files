@@ -1,0 +1,57 @@
+@Controller
+public class HelloController {
+
+   @RequestMapping("/")
+   public String index() {
+      return "index";
+   }
+
+   @PostMapping("/hello")
+   public String sayHello(@RequestParam("name") String name, Model model) {
+      model.addAttribute("name", name);
+      return "hello";
+   }
+}
+
+
+Model is an interface while ModelMap is a class.Model: It is an Interface
+
+@RequestMapping(method = RequestMethod.GET)
+    public String printHello(Model model) {
+          model.addAttribute("message", "Hello World!!");
+          return "hello";
+       }
+
+@GetMapping("/showViewPage")
+public String passParametersWithModel(Model model) {
+    Map<String, String> map = new HashMap<>();
+    map.put("spring", "mvc");
+    model.addAttribute("message", "Baeldung");
+    model.mergeAttributes(map);
+    return "viewPage";
+}
+
+ ModelAndView is just a container for both a ModelMap and a view object.
+ It allows a controller to return both as a single value. 
+
+Model: is an interface it contains four addAttribute and one merAttribute method.
+
+ModelMap: implements Map interface. It also contains Map method.
+
+@RequestMapping("/helloworld")
+public String hello(ModelMap map) {
+    String helloWorldMessage = "Hello world!";
+    String welcomeMessage = "Welcome!";
+    map.addAttribute("helloMessage", helloWorldMessage);
+    map.addAttribute("welcomeMessage", welcomeMessage);
+    return "hello";
+}
+
+ModelAndView: As Bart explain it allows a controller return both as a single value.
+
+@RequestMapping("/welcome")
+public ModelAndView helloWorld() {
+        String message = "Hello World!";
+        return new ModelAndView("welcome", "message", message);
+    }
+

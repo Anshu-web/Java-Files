@@ -1,0 +1,159 @@
+
+*********************************Steps to use SessionFactory 
+
+SessionFactory factory=new configuration().configure().buildSessionFactory();
+
+Session session=factory.openSession();
+
+Transaction tx=sesssion.beginTransaction();
+
+*******************************************************************************
+
+** Batch Processing
+
+ session.flush();
+		 //Force this session to flush. Must be called at the end of aunit
+		 //of work, before committing the transaction and closing thesession 
+		 //(depending on setFlushMode(FlushMode), Transaction.commit() calls this method). 
+		// Flushing is the process of synchronizing the underlying persistentstore with
+		 //persistable state held in memory.
+		 
+ session.clear();
+
+        //Completely clear the session. Evict all loaded instances and cancel all pendingsaves, updates and deletions. 
+        //Do not close open iterators or instances of ScrollableResults.
+  
+
+
+Session session = SessionFactory.openSession();
+Transaction tx = session.beginTransaction();
+for ( int i=0; i<100000; i++ ) {
+   Employee employee = new Employee(.....);
+   session.save(employee);
+}
+tx.commit();
+session.close();
+By default, Hibernate will cache all the persisted objects in the session-level cache 
+and ultimately your application would fall over with an OutOfMemoryException somewhere around the 50,000th row. 
+You can resolve this problem, if you are using batch processing with Hibernate.
+
+public class ManageEmployee {
+   private static SessionFactory factory; 
+   public static void main(String[] args) {
+      
+      try {
+         factory = new Configuration().configure().buildSessionFactory();
+      } catch (Throwable ex) { 
+         System.err.println("Failed to create sessionFactory object." + ex);
+         throw new ExceptionInInitializerError(ex); 
+      }
+      ManageEmployee ME = new ManageEmployee();
+
+      /* Add employee records in batches */
+      ME.addEmployees( );
+   }
+   
+   /* Method to create employee records in batches */
+   public void addEmployees( ){
+      Session session = factory.openSession();
+      Transaction tx = null;
+      Integer employeeID = null;
+      
+      try {
+         tx = session.beginTransaction();
+         for ( int i=0; i<100000; i++ ) {
+            String fname = "First Name " + i;
+            String lname = "Last Name " + i;
+            Integer salary = i;
+            Employee employee = new Employee(fname, lname, salary);
+            session.save(employee);
+         	if( i % 50 == 0 ) {
+               session.flush();
+               session.clear();
+            }
+         }
+         tx.commit();
+      } catch (HibernateException e) {
+         if (tx!=null) tx.rollback();
+         e.printStackTrace(); 
+      } finally {
+         session.close(); 
+      }
+      return ;
+   }
+}
+
+
+*********************************************************************INTERCEPTORS************
+
+How to Use Interceptors?
+
+To build an interceptor, you can either implement Interceptor class directly or extend EmptyInterceptor class. 
+Following will be the simple steps to use Hibernate Interceptor functionality.
+
+Thus an object passes through different stages in its life cycle and Interceptor Interface provides methods, 
+which can be called at different stages to perform some required tasks. 
+These methods are callbacks from the session to the application, allowing the application to inspect and/or manipulate
+ properties of a persistent object before it is saved, updated, deleted or loaded.
+ Following is the list of all the methods available within the Interceptor interface -
+
+Sr.No.	Method & Description
+1	
+findDirty()
+
+This method is be called when the flush() method is called on a Session object.
+
+2	
+instantiate()
+
+This method is called when a persisted class is instantiated.
+
+3	
+isUnsaved()
+
+This method is called when an object is passed to the saveOrUpdate() method/
+
+4	
+onDelete()
+
+This method is called before an object is deleted.
+
+5	
+onFlushDirty()
+
+This method is called when Hibernate detects that an object is dirty (i.e. have been changed) during a flush i.e. update
+ operation.
+
+6	
+onLoad()
+
+This method is called before an object is initialized.
+
+7	
+onSave()
+
+This method is called before an object is saved.
+
+8	
+postFlush()
+
+This method is called after a flush has occurred and an object has been updated in memory.
+
+9	
+preFlush()
+
+This method is called before a flush.
+
+***************************************CACHE********************
+
+@EnableCaching in main class along with @SpringBootAplication
+@Cacheable before the getall method @service layer.
+
+Diff between cache and cookies?? 
+
+**Cookies is used to store the user details whereas the cache is used to sre the ibformation to render the page faster.
+
+**Cookis lets you know about the pages that have been  tracked by the user ...lets consider you open amazon and looked for some shoes and then 
+  you open the facebook page then you get to see those things which you searched on amazon.
+
+** Cache enables you to open the pages that contained so much of information quite easily if theat page have been oped earlier.

@@ -1,0 +1,21 @@
+
+
+What is the reason to disable csrf in a Spring Boot application?
+
+You are using another token mechanism.
+You want to simplify interactions between a client and the server.
+
+===========================================JWT==Jason Web Token
+--way to do the authorization in the context of microservices
+--RFC 7519(outlines how a JWT should be structured)
+           Authorization Strategy
+
+---Session Token===Reference Token
+---Json Web Token====Value Token
+
+Three Parts of JWT==
+--Header
+--Payload
+--Signature
+
+

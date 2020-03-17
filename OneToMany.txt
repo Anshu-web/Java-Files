@@ -1,0 +1,119 @@
+The annotation mappedBy ideally should always be used in the Parent side (Company class) of the bi directional 
+relationship, in this case it should be in Company class pointing to the member variable 'company' of the 
+Child class (Branch class)
+
+The annotation @JoinColumn is used to specify a mapped column for joining an entity association, this annotation 
+can be used in any class (Parent or Child) but it should ideally be used only in one 
+side (either in parent class or in Child class not in both) here in this case i used it in the 
+Child side (Branch class) of the bi directional relationship indicating the foreign key in the Branch class.
+
+===========================================================
+
+As I explained in this article, if you use the @OneToMany annotation with @JoinColumn, then you have 
+a unidirectional association.
+
+If you use the @OneToMany with the mappedBy attribute set, you have a bidirectional association,
+ meaning you need to have a @ManyToOne association on the child side which the mappedBy references.
+
+=============================================================================
+
+
+child class, Branch
+
+@Entity
+public class Branch {
+
+    private int branchId;
+    private String branchName;
+    private Company company;
+
+    @Id
+    @GeneratedValue
+    @Column(name="BRANCH_ID")
+    public int getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(int branchId) {
+        this.branchId = branchId;
+    }
+
+    @Column(name="BRANCH_NAME")
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public void setBranchName(String branchName) {
+        this.branchName = branchName;
+    }
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="COMPANY_ID")
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+
+}
+=============================================================
+
+child class, Branch
+
+@Entity
+public class Branch {
+
+    private int branchId;
+    private String branchName;
+    private Company company;
+
+    @Id
+    @GeneratedValue
+    @Column(name="BRANCH_ID")
+    public int getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(int branchId) {
+        this.branchId = branchId;
+    }
+
+    @Column(name="BRANCH_NAME")
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public void setBranchName(String branchName) {
+        this.branchName = branchName;
+    }
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="COMPANY_ID")
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+
+}
+=========================================================
+
+@JoinColumn
+
+The purpose of @JoinColumn is to create a join column if one does not already exist. 
+If it does, then this annotation can be used to name the join column.
+
+
+MappedBy
+
+The purpose of the MappedBy parameter is to instruct JPA: Do NOT create another join table as the relationship 
+is already being mapped by the opposite entity of this relationship.
+========================================================================
+
+

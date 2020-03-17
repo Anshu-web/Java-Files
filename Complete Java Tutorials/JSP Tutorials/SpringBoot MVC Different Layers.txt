@@ -1,0 +1,164 @@
+ 
+@Controller
+@RequestMapping("/customer")
+public class CustomerController {
+
+	@Autowired
+	private  CustomerService  customerService;
+	
+	//@RequestMapping("/list")
+	@GetMapping("/list")
+	public String listcustomer(Model themodel) {
+		themodel.addAttribute("customers",customerService.getCustomer());
+		
+		return "list-customer";
+	}
+	
+	
+	@GetMapping("/addcustomer")
+	public String addCustomer(Model themodel) {
+		System.out.println("in addCustomer ");
+		Customer customer=new Customer();
+		themodel.addAttribute(customer);
+		return "show-customer-form";
+	}
+	
+	@PostMapping("/processform")
+	public String processForm(Model themodel,@ModelAttribute("customer") Customer newcustomer ) {
+		
+		
+		//adding logic here
+		customerService.addCustomer(newcustomer);
+		
+		//display
+		themodel.addAttribute("customers",customerService.getCustomer());
+		
+		System.out.println("in process form");
+		return "list-customer";
+	}
+	
+	
+	@GetMapping("/update")
+	public String updateCustomer(Model themodel,@RequestParam("customerId") int theId ) {
+		
+		themodel.addAttribute("customer",customerService.getSingleCustomer(theId));
+		
+		return "show-customer-form";
+		
+		
+	}
+	
+	@GetMapping("/delete")
+	public String deleteCustomer(Model themodel,@RequestParam("customerId") int theId ) {
+		
+
+				//adding logic here
+				customerService.deleteCustomer(theId);
+		
+		
+				//display
+				themodel.addAttribute("customers",customerService.getCustomer());
+				
+				System.out.println("in process form");
+				return "list-customer";
+		
+		
+	}
+	
+}
+
+
+****************************************************************************************************************************************************************************
+
+
+@Service
+public class CustomerServiceimpl implements CustomerService {
+
+	@Autowired
+	private CustomerDao customerdao;
+	
+	@Transactional
+	public List<Customer> getCustomer() {
+		
+                // do some business processing here ...
+    		//now call DAO layer
+		return customerdao.getCustomer();
+
+  }
+	
+	
+	@Transactional
+	public boolean addCustomer(Customer customer) {
+		
+   		 // do some business processing  here ...
+    		//now call DAO layer
+		return(customerdao.addCustomer(customer));
+		
+	}
+	
+	@Transactional
+	public Customer getSingleCustomer(int theId) {
+		
+		// do some business processing here ... 
+    		//now call DAO layer
+		return customerdao.getSingleCustomer(theId);
+	}
+	
+	
+	@Transactional
+	public void deleteCustomer(int theId) {
+   		 // do some business processing here ...
+   		 //now call DAO layer
+		customerdao.deleteCustomer(theId);
+	}
+}
+***********************************************************************************************************************************************************
+
+
+@Repository
+public class CustomerDaoimpl implements CustomerDao{
+
+	@Autowired
+	public SessionFactory sessionfactory;
+	
+	@Override
+	public List<Customer> getCustomer() {
+	Session currentsession=sessionfactory.getCurrentSession();
+	
+	List<Customer> customers=currentsession.createQuery("from Customer",Customer.class).getResultList();
+	
+	return customers;
+	}
+	
+	@Override
+	public Boolean addCustomer(Customer customer) {
+	
+		try {
+			Session currentsession=sessionfactory.getCurrentSession();
+			
+			currentsession.save(customer);
+				
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+		
+		return true;
+	}
+
+	
+	@Override
+	public Customer getSingleCustomer(int theId) {
+		Session currentsession=sessionfactory.getCurrentSession();
+		
+		return currentsession.get(Customer.class,theId);
+	}
+	
+	
+	@Override
+	public void deleteCustomer(int theId) {
+		Session currentsession=sessionfactory.getCurrentSession();
+		
+		currentsession.delete(getSingleCustomer(theId));
+	}
+}
