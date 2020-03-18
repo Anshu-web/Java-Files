@@ -1,0 +1,43 @@
+
+
+The main purpose of generics is to provide type safety and type casting problems.
+
+case :1 ( Type Safety)
+
+Arrays are type safe that is we can give the gauratee for the type of elements present inside the array.
+
+For example if our programming requirement is to hold only string type of objects we can choose string arrays.
+by mistake if we are trying to add any othre type of objects we will ge complile time error.
+
+String[] s= new String[10000];
+s[0]="Anshu";
+s[1]=12; CE=Incompatibe types.
+
+Hence string array can contain only string type of objects.Arrays are safe to use wit respect to type.
+
+Arrays are type safe.
+
+Collection is not type safe.
+
+Collection are not goog to use with respect to type safe.
+
+arraylist l=new arraylist();
+
+l.add("Anshu");
+l.add(new Integer(10));
+
+String s1=(String)l.get(0);
+String s2=(String)l.get(2);==RE=ClassCastException
+==============================================================
+
+Case : Type Casting
+
+1. In the case of arrays type casting is not required.
+
+2. In the case of arrayList type casting is required at the time of retrieval as we dont know what kind of 
+element is present in the ArrayList.
+
+So in single line in case of arraylist , type casting is required and collections ate not type safe so 
+to overcome these issues Generics came into the picture.
+
+============================================================================================
